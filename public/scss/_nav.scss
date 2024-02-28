@@ -1,0 +1,134 @@
+.nav-btn {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  @include transition-ease--05;
+
+  &__burger {
+    // middle bar
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 5px;
+    background: $cc-xdk;
+    border-radius: 150px;
+    @include transition-ease--05;
+
+    &::before {
+      // top bar
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 5px;
+      background-color: $cc-xdk;
+      border-radius: 150px;
+      @include transition-ease--05;
+    }
+
+    &::after {
+      // bottom bar
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 20px;
+      height: 5px;
+      background-color: $cc-xdk;
+      border-radius: 150px;
+      @include transition-ease--05;
+    }
+
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+
+      &::before {
+        // top bar
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+
+      &::after {
+        // bottom bar
+        width: 28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: clamp(325px, 90vw, 475px);
+  height: 100vh;
+  background: $cc-lt;
+  padding-top: 4rem;
+  align-items: end;
+  text-align: right;
+  visibility: hidden;
+
+  &.open {
+    visibility: visible;
+  }
+
+  &__brand {
+    align-self: center;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    margin-bottom: 2rem;
+  }
+
+  &__menu {
+    padding: 1rem;
+    transform: translateX(100%);
+    @include transition-ease--05;
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  &__item {
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  &__sub-link {
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $cc-shadow;
+    z-index: -1;
+  }
+
+  &__cta {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+
+    visibility: hidden;
+    // @include transition-ease--05;
+
+    &.open {
+      visibility: visible;
+    }
+
+    .btn--sign-in {
+      width: 50%;
+      height: 2.5rem;
+    }
+  }
+}

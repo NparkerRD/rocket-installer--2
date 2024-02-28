@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/main.js"></script>
+    <title>Rocket Installer | Design</title>
+  </head>
+  <body>
+    <div class="nav-btn">
+      <span class="nav-btn__burger"></span>
+    </div>
+
+    <nav class="nav flex-col">
+      <div class="nav__overlay"></div>
+      <div class="nav__brand">Rocket Installer</div>
+      <ul class="nav__menu flex-col">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Installations</a>
+        </li>
+        <li class="nav__item nav__sub-menu-container">
+          <a href="#" class="nav__link">Tools</a>
+          <ul class="nav__sub-menu flex-col">
+            <li class="nav__sub-link">Travel Calculator</li>
+            <li class="nav__sub-link">Installation Calculator</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav__cta">
+        <button class="btn btn--primary btn--sign-in">Sign In</button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="cards flex">
+        <div class="cards__card card">
+          <div class="card__img">
+            <img src="assets/logo--innovacare.png" alt="Logo" />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Innovacare Health</h2>
+            <ul class="card__items">
+              <li class="card__item">
+                <div class="card__icon">
+                  <img src="assets/location.png" alt="" />
+                </div>
+                <div class="card__item-description">
+                  <p><span class="card__item-count">9</span> Locations</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="cards__card card">
+          <div class="card__img">ML</div>
+          <div class="card__content">
+            <h2 class="card__title">MegaCorp Logistics</h2>
+            <ul class="card__items">
+              <li class="card__item">
+                <div class="card__icon">
+                  <img src="assets/location.png" alt="" />
+                </div>
+                <div class="card__item-description">
+                  <p><span class="card__item-count">9</span> Locations</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

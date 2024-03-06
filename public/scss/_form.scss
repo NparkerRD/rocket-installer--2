@@ -1,0 +1,75 @@
+.form {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  background: $cc-xlt;
+  width: clamp(320px, 90%, 425px);
+  height: max-content;
+  border-radius: 1.25rem;
+  padding: 1.2rem 1rem 3rem;
+  visibility: hidden;
+
+  &.open {
+    visibility: visible;
+  }
+
+  &__title {
+    margin: auto;
+  }
+
+  &__inputs {
+    margin: 1.7rem 0;
+    @include flexCol;
+  }
+
+  &__row {
+    margin: 0.7rem 0;
+
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.7rem 0;
+
+      .form__input-group {
+        width: 50%;
+      }
+    }
+  }
+
+  &__input-group {
+    @include flexCol;
+
+    label {
+      margin-bottom: 0.3rem;
+      font-weight: $fw-bold;
+    }
+
+    input[type="text"] {
+      border: 0.05rem solid $cc-shadow;
+      outline: none;
+      padding: 0.31rem;
+      border-radius: 0.43rem;
+    }
+
+    input[type="file"] {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &--add-new-client {
+    #clientDiscount {
+      width: 3rem;
+    }
+  }
+}

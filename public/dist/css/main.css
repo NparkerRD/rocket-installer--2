@@ -38,6 +38,7 @@ ul {
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease;
+  width: 50%;
 }
 .btn:hover {
   transform: scale(1.05);
@@ -45,6 +46,17 @@ ul {
 .btn--primary {
   background: #845ec2;
   color: #ddd3ee;
+}
+.btn--sign-in {
+  height: 2.5rem;
+}
+.btn--add-new {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-btn {
@@ -136,15 +148,6 @@ ul {
   font-size: 1.1rem;
   margin: 0.2rem 0;
 }
-.nav__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: -1;
-}
 .nav__cta {
   margin: auto;
   text-align: center;
@@ -154,14 +157,73 @@ ul {
 .nav__cta.open {
   visibility: visible;
 }
-.nav__cta .btn--sign-in {
+
+.form {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #f9f8fc;
+  width: clamp(320px, 90%, 425px);
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 1.25rem;
+  padding: 1.2rem 1rem 3rem;
+  visibility: hidden;
+}
+.form.open {
+  visibility: visible;
+}
+.form__title {
+  margin: auto;
+}
+.form__inputs {
+  margin: 1.7rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.form__row {
+  margin: 0.7rem 0;
+}
+.form__row--flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.7rem 0;
+}
+.form__row--flex .form__input-group {
   width: 50%;
-  height: 2.5rem;
+}
+.form__input-group {
+  display: flex;
+  flex-direction: column;
+}
+.form__input-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+.form__input-group input[type=text] {
+  border: 0.05rem solid rgba(0, 0, 0, 0.25);
+  outline: none;
+  padding: 0.31rem;
+  border-radius: 0.43rem;
+}
+.form__input-group input[type=file] {
+  color: rgba(0, 0, 0, 0);
+}
+.form__buttons {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.form__buttons .btn {
+  margin: 0.5rem 0;
+}
+.form--add-new-client #clientDiscount {
+  width: 3rem;
 }
 
 .cards {
   width: 100%;
-  margin: 5rem 0;
   padding-top: 2rem;
   height: 100vh;
   flex-direction: column;
@@ -189,7 +251,6 @@ ul {
   border-radius: 100%;
   width: 100%;
   aspect-ratio: 1;
-  border: 1px solid;
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -201,10 +262,15 @@ ul {
   width: 80px;
   height: 80px;
 }
+.card__img--placeholder {
+  border: 1px solid;
+}
 .card__content {
   grid-column: 2;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
 }
 .card__content .card__item {
   display: flex;
@@ -217,4 +283,27 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.card__title {
+  font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+}
+.overlay.open {
+  visibility: visible;
+}
+
+.main__action-btns {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  margin-top: 4rem;
 }/*# sourceMappingURL=main.css.map */

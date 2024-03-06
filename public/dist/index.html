@@ -12,8 +12,9 @@
       <span class="nav-btn__burger"></span>
     </div>
 
+    <!-- Will apply to all elements requiring overlay -->
+    <div class="overlay"></div>
     <nav class="nav flex-col">
-      <div class="nav__overlay"></div>
       <div class="nav__brand">Rocket Installer</div>
       <ul class="nav__menu flex-col">
         <li class="nav__item">
@@ -34,6 +35,48 @@
     </nav>
 
     <main class="main">
+      <div class="main__action-btns">
+        <div class="btn btn--add-new">
+          <img src="assets/add.png" alt="Add new" />
+        </div>
+      </div>
+
+      <form class="form form--add-new-client flex-col">
+        <h1 class="form__title">Add new client</h1>
+
+        <div class="form__inputs">
+          <div class="form__row">
+            <div class="form__input-group">
+              <label for="clientName" class="form__label">Name</label>
+              <input type="text" name="clientName" id="clientName" required />
+            </div>
+          </div>
+          <div class="form__row--flex">
+            <div class="form__input-group">
+              <label for="clientDiscount" class="form__label">Discount</label>
+              <input type="text" name="clientDiscount" id="clientDiscount" />
+            </div>
+
+            <div class="form__input-group">
+              <label for="companyLogo" class="form__label">Company Logo</label>
+              <input
+                type="file"
+                name="companyLogo"
+                id="companyLogo"
+                accept=".png,.jpg"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form__buttons flex-col">
+          <button class="btn btn--create-client btn--primary">
+            Create Client
+          </button>
+          <button class="btn btn--cancel">Cancel</button>
+        </div>
+      </form>
+
       <div class="cards flex">
         <div class="cards__card card">
           <div class="card__img">
@@ -54,7 +97,7 @@
           </div>
         </div>
         <div class="cards__card card">
-          <div class="card__img">ML</div>
+          <div class="card__img card__img--placeholder">ML</div>
           <div class="card__content">
             <h2 class="card__title">MegaCorp Logistics</h2>
             <ul class="card__items">
@@ -63,7 +106,7 @@
                   <img src="assets/location.png" alt="" />
                 </div>
                 <div class="card__item-description">
-                  <p><span class="card__item-count">9</span> Locations</p>
+                  <p><span class="card__item-count">4</span> Locations</p>
                 </div>
               </li>
             </ul>

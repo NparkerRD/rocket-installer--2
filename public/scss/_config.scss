@@ -76,22 +76,3 @@ ul {
 .flex-col {
   @include flexCol;
 }
-
-.btn {
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 5px 7px 15px $cc-shadow;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &--primary {
-    background: $cc-primary;
-    color: $cc-lt;
-  }
-}

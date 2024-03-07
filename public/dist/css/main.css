@@ -162,7 +162,7 @@ ul {
   position: fixed;
   top: 25%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%) translateY(-100%);
   background: #f9f8fc;
   width: clamp(320px, 90%, 425px);
   height: -moz-max-content;
@@ -170,9 +170,11 @@ ul {
   border-radius: 1.25rem;
   padding: 1.2rem 1rem 3rem;
   visibility: hidden;
+  transition: all 0.5s ease-in-out;
 }
 .form.open {
   visibility: visible;
+  transform: translateX(-50%) translateY(0%);
 }
 .form__title {
   margin: auto;
@@ -187,11 +189,18 @@ ul {
 }
 .form__row--flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0.7rem 0;
 }
 .form__row--flex .form__input-group {
   width: 50%;
+  margin: 0 0.5rem;
+}
+.form__row--flex .form__input-group:first-child {
+  margin-left: 0;
+}
+.form__row--flex .form__input-group:last-child {
+  margin-right: 0;
 }
 .form__input-group {
   display: flex;
@@ -219,6 +228,10 @@ ul {
   margin: 0.5rem 0;
 }
 .form--add-new-client #clientDiscount {
+  width: 3rem;
+}
+
+.input-sm {
   width: 3rem;
 }
 

@@ -2,16 +2,18 @@
   position: fixed;
   top: 25%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%) translateY(-100%);
   background: $cc-xlt;
   width: clamp(320px, 90%, 425px);
   height: max-content;
   border-radius: 1.25rem;
   padding: 1.2rem 1rem 3rem;
   visibility: hidden;
+  @include transition-ease--05;
 
   &.open {
     visibility: visible;
+    transform: translateX(-50%) translateY(0%);
   }
 
   &__title {
@@ -28,11 +30,20 @@
 
     &--flex {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       margin: 0.7rem 0;
 
       .form__input-group {
         width: 50%;
+        margin: 0 0.5rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -72,4 +83,8 @@
       width: 3rem;
     }
   }
+}
+
+.input-sm {
+  width: 3rem;
 }

@@ -41,38 +41,102 @@
         </div>
       </div>
 
-      <form class="form form--add-new-client flex-col">
-        <h1 class="form__title">Add new client</h1>
+      <form class="form form--add-new-door flex-col">
+        <h1 class="form__title">Add new door</h1>
 
         <div class="form__inputs">
           <div class="form__row">
             <div class="form__input-group">
-              <label for="clientName" class="form__label">Name</label>
-              <input type="text" name="clientName" id="clientName" required />
+              <label for="doorName" class="form__label">Name</label>
+              <input type="text" name="doorName" id="doorName" />
             </div>
           </div>
-          <div class="form__row--flex">
-            <div class="form__input-group">
-              <label for="clientDiscount" class="form__label">Discount</label>
-              <input type="text" name="clientDiscount" id="clientDiscount" />
-            </div>
 
+          <div class="form__row">
             <div class="form__input-group">
-              <label for="companyLogo" class="form__label">Company Logo</label>
+              <label for="doorID" class="form__label">Door ID</label>
+              <input type="text" name="doorID" id="doorID" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__input-group">
+              <label for="isDoubleDoor" class="form__label"
+                >Check here for double door:</label
+              >
               <input
-                type="file"
-                name="companyLogo"
-                id="companyLogo"
-                accept=".png,.jpg"
+                type="checkbox"
+                class="checkbox"
+                name="isDoubleDoor"
+                id="isDoubleDoor"
               />
+            </div>
+            <div class="form__input-group">
+              <fieldset class="flex-col">
+                <legend>Door Hardware (select all that apply)</legend>
+                <div class="checkbox-group">
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    name="checkbox--rex"
+                    id="checkbox--rex"
+                    value="rex"
+                  />
+                  <label class="checkbox-label" for="checkbox--rex">REX</label>
+                </div>
+                <div class="checkbox-group">
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    name="checkbox--dps"
+                    id="checkbox--dps"
+                    value="dps"
+                  />
+                  <label class="checkbox-label" for="checkbox--dps">DPS</label>
+                </div>
+                <div class="checkbox-group">
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    name="checkbox--strike"
+                    id="checkbox--strike"
+                    value="strike"
+                  />
+                  <label class="checkbox-label" for="checkbox--strike"
+                    >Strike</label
+                  >
+                </div>
+                <div class="checkbox-group">
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    name="checkbox--reader"
+                    id="checkbox--reader"
+                    value="reader"
+                  />
+                  <label class="checkbox-label" for="checkbox--reader"
+                    >Reader</label
+                  >
+                </div>
+                <div class="checkbox-group">
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    name="checkbox--maglock"
+                    id="checkbox--maglock"
+                    value="maglock"
+                  />
+                  <label class="checkbox-label" for="checkbox--maglock"
+                    >Maglock</label
+                  >
+                </div>
+              </fieldset>
             </div>
           </div>
         </div>
 
         <div class="form__buttons flex-col">
-          <button class="btn btn--create-client btn--primary">
-            Create Client
-          </button>
+          <button class="btn btn--create-site btn--primary">Create Site</button>
           <button class="btn btn--cancel">Cancel</button>
         </div>
       </form>

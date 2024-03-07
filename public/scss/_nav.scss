@@ -72,9 +72,14 @@
   align-items: end;
   text-align: right;
   visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+  @include transition-ease--05;
 
   &.open {
     visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 
   &__brand {
@@ -113,6 +118,31 @@
     // @include transition-ease--05;
 
     &.open {
+      visibility: visible;
+    }
+  }
+}
+
+@include media-lg {
+  .nav-btn {
+    visibility: hidden;
+  }
+
+  .nav {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    transform: translateX(0);
+    align-items: flex-start;
+    text-align: left;
+    width: clamp(275px, 25.5%, 375px);
+    // width: 25.5%;
+
+    &__menu {
+      transform: translateX(0);
+    }
+
+    &__cta {
       visibility: visible;
     }
   }

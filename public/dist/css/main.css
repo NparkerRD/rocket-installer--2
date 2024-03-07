@@ -48,7 +48,7 @@ ul {
   color: #ddd3ee;
 }
 .btn--sign-in {
-  height: 2.5rem;
+  transform: translateY(-100%);
 }
 .btn--add-new {
   width: -moz-max-content;
@@ -122,9 +122,14 @@ ul {
   align-items: end;
   text-align: right;
   visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
 }
 .nav.open {
   visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 .nav__brand {
   align-self: center;
@@ -158,6 +163,26 @@ ul {
   visibility: visible;
 }
 
+@media screen and (min-width: 1024px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    transform: translateX(0);
+    align-items: flex-start;
+    text-align: left;
+    width: clamp(275px, 25.5%, 375px);
+  }
+  .nav__menu {
+    transform: translateX(0);
+  }
+  .nav__cta {
+    visibility: visible;
+  }
+}
 .form {
   position: fixed;
   top: 25%;
@@ -175,6 +200,9 @@ ul {
 .form.open {
   visibility: visible;
   transform: translateX(-50%) translateY(0%);
+}
+.form--add-new-door {
+  top: 10%;
 }
 .form__title {
   margin: auto;
@@ -218,6 +246,31 @@ ul {
 }
 .form__input-group input[type=file] {
   color: rgba(0, 0, 0, 0);
+}
+.form__input-group .checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.form__input-group fieldset {
+  border: none;
+  margin-top: 0.7rem;
+}
+.form__input-group fieldset legend {
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+.form__input-group fieldset .checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+.form__input-group fieldset .checkbox-group .checkbox {
+  margin-right: 0.2rem;
+}
+.form__input-group fieldset .checkbox-label {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 .form__buttons {
   width: 100%;

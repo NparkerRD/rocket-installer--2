@@ -78,3 +78,82 @@
     <button class="btn btn--cancel">Cancel</button>
   </div>
 </form>
+
+<!-- Add new door -->
+<form class="form form--add-new-door flex-col">
+  <h1 class="form__title">Add new door</h1>
+
+  <div class="form__inputs">
+    <div class="form__row">
+      <div class="form__input-group">
+        <label for="doorName" class="form__label">Name</label>
+        <input type="text" name="doorName" id="doorName" />
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__input-group">
+        <label for="doorID" class="form__label">Door ID</label>
+        <input type="text" name="doorID" id="doorID" required />
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__input-group">
+        <label for="isDoubleDoor" class="form__label"
+          >Check here for double door:</label
+        >
+        <input type="checkbox" name="isDoubleDoor" id="isDoubleDoor" />
+      </div>
+      <div class="form__input-group">
+        <fieldset>
+          <legend>Door Hardware (select all that apply)</legend>
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="checkbox--rex"
+            id="checkbox--rex"
+            value="rex"
+          />
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="checkbox--dps"
+            id="checkbox--dps"
+            value="dps"
+          />
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="checkbox--strike"
+            id="checkbox--strike"
+            value="strike"
+          />
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="checkbox--reader"
+            id="checkbox--reader"
+            value="reader"
+          />
+          <input
+            type="checkbox"
+            class="checkbox"
+            name="checkbox--maglock"
+            id="checkbox--maglock"
+            value="maglock"
+          />
+        </fieldset>
+      </div>
+      <div class="form__input-group">
+        <label for="siteZip" class="form__label">Zip</label>
+        <input type="text" name="siteZip" id="siteZip" class="input input-sm" />
+      </div>
+    </div>
+  </div>
+
+  <div class="form__buttons flex-col">
+    <button class="btn btn--create-site btn--primary">Create Site</button>
+    <button class="btn btn--cancel">Cancel</button>
+  </div>
+</form>
